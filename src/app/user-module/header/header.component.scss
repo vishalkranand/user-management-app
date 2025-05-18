@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.container {
+  //background: linear-gradient(to right, #ff512f, #f09819) !;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-left: 35px;
+  height: 35px;
+  width: 130px;
+}
+
+.tab-icons {
+  margin-right: 5px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  margin-right: 20px;
+}
+
+.favorite-icon {
+  position: relative;
+  float: right;
+  font-size: large;
+  font-weight: bold;
+}
+
+.btn-text {
+  font-size: medium;
+  font-weight: bold;
+  width: 10rem;
+}
+
+.profile {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.container1 {
+  max-width: 100%;
+}
+
+.email {
+  margin-right: 10px;
+}
+
+.mat-tab-nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.mat-toolbar-single-row {
+  z-index: 1000;
+}
+
+.logout-icon {
+  color: black;
+}
+
+.entity {
+  margin-left: -30px;
+  margin-top: 25px;
+  font-family: "Playfair+Display";
+  font-weight: bold;
+  font-size: small;
+  color: #525252;
+}
