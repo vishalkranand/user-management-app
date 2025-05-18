@@ -1,0 +1,107 @@
+<div class="page-background">
+  <div class="left-section">
+    <div class="join-content">
+      <div>
+        <div style="text-align: center" class="typewriter">
+          <div class="heading-primary-sub">
+            <img class="logo" src="../../../assets/FivD.png" alt="logo" />
+          </div>
+          <h2>
+            <strong>User Management System</strong>
+          </h2>
+          <button
+            mat-flat-button
+            class="about-btn"
+            (click)="navigateToAboutFivd()"
+          >
+            About Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="register-card">
+      <h2 class="register-head">Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-icon matPrefix class="mat-icon">email</mat-icon>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <mat-error
+            *ngIf="
+              loginForm.get('email')?.touched &&
+              loginForm.get('email')?.hasError('required')
+            "
+          >
+            Email is required
+          </mat-error>
+          <mat-error
+            *ngIf="
+              loginForm.get('email')?.touched &&
+              loginForm.get('email')?.hasError('email')
+            "
+          >
+            Enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            formControlName="password"
+          />
+
+          <mat-icon matPrefix>lock</mat-icon>
+
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Toggle password visibility'"
+            [attr.aria-pressed]="!hidePassword"
+          >
+            <mat-icon>
+              {{ hidePassword ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </button>
+
+          <mat-error
+            *ngIf="
+              loginForm.get('password')?.touched &&
+              loginForm.get('password')?.hasError('required')
+            "
+          >
+            Password is required
+          </mat-error>
+        </mat-form-field>
+
+        <div class="btn-wrapper">
+          <button
+            mat-raised-button
+            class="register-btn"
+            [disabled]="loginForm.invalid"
+          >
+            Login
+          </button>
+       
+          <div class="register-redirect">
+            <span>Don't have an account?</span>
+            <button
+              mat-button
+              color="accent"
+              (click)="navigateToRegister()"
+              class="register-link"
+            >
+              Register here
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
