@@ -1,0 +1,163 @@
+<div class="page-background">
+  <div class="left-section">
+    <div class="join-content">
+      <div>
+        <div style="text-align: center" class="typewriter">
+          <div class="heading-primary-sub">
+            <img class="logo" src="../../../assets/FivD.png" alt="logo " />
+          </div>
+          <h2>
+            <strong>User Management System</strong>
+          </h2>
+          <button
+            mat-raised-button
+            color="primary"
+            class="about-btn"
+            (click)="navigateToAboutFivd()"
+          >
+            About Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-section">
+    <div class="register-card">
+      <h2 class="register-head">Register Here</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-icon class="mat-icon" matPrefix>person</mat-icon>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error
+            *ngIf="
+              registerForm.get('name')?.touched &&
+              registerForm.get('name')?.hasError('required')
+            "
+          >
+            Name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-icon matPrefix class="mat-icon">email</mat-icon>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <mat-error
+            *ngIf="
+              registerForm.get('email')?.touched &&
+              registerForm.get('email')?.hasError('required')
+            "
+          >
+            Email is required
+          </mat-error>
+          <mat-error
+            *ngIf="
+              registerForm.get('email')?.touched &&
+              registerForm.get('email')?.hasError('email')
+            "
+          >
+            Enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-icon matPrefix class="mat-icon">wc</mat-icon>
+          <mat-label class="mat-label">Gender</mat-label>
+          <mat-select name="gender" formControlName="gender">
+            <mat-option *ngFor="let gender of genders" [value]="gender">
+              {{ gender }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="
+              registerForm.get('gender')?.touched &&
+              registerForm.get('gender')?.hasError('required')
+            "
+          >
+            Gender is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-icon matPrefix class="mat-icon">phone</mat-icon>
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="phoneNumber" />
+          <mat-error
+            *ngIf="
+              registerForm.get('phoneNumber')?.touched &&
+              registerForm.get('phoneNumber')?.hasError('required')
+            "
+          >
+            Mobile number is required
+          </mat-error>
+          <mat-error
+            *ngIf="registerForm.get('phoneNumber')?.hasError('pattern')"
+          >
+            Must be a 10-digit number
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-field">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            formControlName="password"
+          />
+
+          <mat-icon matPrefix>lock</mat-icon>
+
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Toggle password visibility'"
+            [attr.aria-pressed]="!hidePassword"
+            type="button"
+          >
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+
+          <mat-error
+            *ngIf="
+              registerForm.get('password')?.touched &&
+              registerForm.get('password')?.hasError('required')
+            "
+          >
+            Password is required
+          </mat-error>
+          <mat-error
+            *ngIf="registerForm.get('password')?.hasError('minlength')"
+          >
+            Minimum 6 characters
+          </mat-error>
+        </mat-form-field>
+
+        <div class="btn-wrapper">
+          <button
+            mat-raised-button
+            class="register-btn"
+            [disabled]="registerForm.invalid"
+          >
+            Register
+          </button>
+
+          <div class="register-redirect">
+            <span>Already have an account?</span>
+            <button
+              mat-button
+              color="accent"
+              (click)="navigateToLogin()"
+              class="register-link"
+            >
+              Login here
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

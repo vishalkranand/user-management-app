@@ -1,0 +1,126 @@
+.page-background {
+  display: flex !important;
+  background: linear-gradient(to right, #ff512f, #f09819);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  background: white;
+  padding: 20px 40px 20px 40px;
+  border-radius: 100px 0px 0px 100px;
+  width: 400px;
+  height: fit-content;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.full-field {
+  width: 100%;
+  // margin-bottom: 5px;
+}
+
+.btn-wrapper {
+  text-align: right;
+}
+
+.register-btn {
+  background: #f09819;
+  color: white !important;
+  border-radius: 25px !important;
+  padding: 8px 25px !important;
+  font-weight: 500;
+}
+
+.left-section {
+  flex: 1;
+  //background: linear-gradient(to right, #ff512f, #f09819);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  //margin: 3rem;
+}
+
+.join-content h2 {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.join-content p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.about-btn {
+  background: white !important;
+  color: #ff512f !important;
+  border-radius: 30px;
+  padding: 10px 25px;
+  width: 8rem;
+  height: 3.5rem;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+.heading-primary-sub {
+  display: block;
+  animation-duration: 3s;
+}
+
+.typewriter h2 {
+  color: rgb(0, 0, 0);
+  font-family: monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 5px 10px;
+  letter-spacing: 0.1em;
+}
+
+.logo {
+  height: 60px;
+  width: 160px;
+}
+
+.register-head {
+  text-align: center;
+}
+
+mat-icon {
+  color: grey;
+  margin-right: 10px;
+}
+
+mat-form-field {
+  margin-bottom: 0px;
+}
+
+::ng-deep .mat-form-field-flex {
+  height: 3rem;
+}
+
+.register-redirect {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+
+  .register-link {
+    text-transform: none;
+    font-weight: 500;
+    padding: 0 4px;
+    min-width: auto;
+  }
+}
