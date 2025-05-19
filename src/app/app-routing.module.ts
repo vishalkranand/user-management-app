@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'fivd/users',
     loadChildren: () =>
       import('./user-module/user-module.module').then(
-        (m) => m.UserModuleModule
+        (m) => m.UserModuleModule 
       ),
     canActivate: [AuthGuard],
   },

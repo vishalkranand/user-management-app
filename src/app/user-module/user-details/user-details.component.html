@@ -97,10 +97,25 @@
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef>Actions</th>
           <td mat-cell *matCellDef="let user">
-            <button mat-icon-button color="primary" (click)="editUser(user)">
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="editUser(user)"
+              title="Edit User Details"
+            >
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button color="warn" (click)="deleteUser(user)">
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="deleteUser(user)"
+              [disabled]="user.email === loggedInEmail"
+              [title]="
+                user.email === loggedInEmail
+                  ? 'Cannot delete the logged-in user'
+                  : 'Delete user'
+              "
+            >
               <mat-icon>delete</mat-icon>
             </button>
           </td>

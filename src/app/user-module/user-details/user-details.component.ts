@@ -32,6 +32,7 @@ export class UserDetailsComponent implements OnInit {
   selectedUsers: User[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  loggedInEmail: string | null = '';
 
   constructor(
     private userService: ManageUsersService,
@@ -41,11 +42,11 @@ export class UserDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loggedInEmail = sessionStorage.getItem('email');
     this.loadUsers();
   }
 
   loadUsers(): void {
-    const loggedInEmail = sessionStorage.getItem('email');
     this.userService.getUserDetails().subscribe({
       next: (users: any) => {
         this.users = users;

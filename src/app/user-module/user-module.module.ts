@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { UserModuleRoutingModule } from './user-module-routing.module';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { AppModule } from '../app.module';
