@@ -5,6 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Steps to setup project 
 1 - Install npm packages using `npm install`
 2 - Run ng serve --open
+3 - Run backend application
+
+Start using the application...
 
 ## Development server
 
